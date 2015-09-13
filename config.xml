@@ -4,12 +4,12 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.shoogle.haningeanchors"
-        version   = "1.0.2">
+        version   = "1.0.3">
 
-    <name>HaningeAnchors</name>
+    <name>HaningeAnchors Team 05</name>
 
     <description>
-        Registreringsapp
+        App för anmälan till träningar
     </description>
 
     <author href="http://www.haningeanchors.se" email="conny@shoogle.se">
@@ -59,7 +59,7 @@
 
    <icon src="res/icon/cordova_android_96.png" gap:platform="android" gap:density="xhdpi"/>
 
-
+    <icon src="cordova/cordova_ios_144.png" gap:platform="ios" width="144" height="144"/>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
     <string>100</string>
