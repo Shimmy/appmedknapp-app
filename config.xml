@@ -63,9 +63,6 @@
     <icon src="cordova/cordova_ios_144.png" gap:platform="ios" width="144" height="144"/>
 
 
-    <gap:splash src="res/screen/iphone_retina_portrait.png" gap:platform="ios" width="640" height="960"/>
-
-  
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
     <string>100</string>
     </gap:config-file>
