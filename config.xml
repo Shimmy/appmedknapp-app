@@ -60,7 +60,10 @@
 
    <icon src="res/icon/cordova_android_96.png" gap:platform="android" gap:density="xhdpi"/>
 
-    <icon src="cordova/cordova_ios_144.png" gap:platform="ios" width="144" height="144"/>
+    <icon src="res/icon/cordova_ios_144.png" gap:platform="ios" width="144" height="144"/>
+
+     <gap:splash src="res/screen/Default-667h@2x.png" gap:platform="ios" width="750" height="1334" />
+     <gap:splash src="res/screen/Default-Portrait-736h@3x.png" gap:platform="ios" width="1242" height="2208" />
 
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
