@@ -49,12 +49,24 @@
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
-    <!--
+    <!-- 
         <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     -->
 
     <!-- Define app icon for each platform. -->
    
+
+
+    <icon src="icon.png" gap:platform="ios"/>
+    <icon src="icon-57.png" width="57" height="57" gap:platform="ios"/>
+    <icon src="icon-57@2x.png" width="114" height="114" gap:platform="ios"/>
+    <icon src="icon-72.png" width="72" height="72" gap:platform="ios"/>
+    <icon src="icon-72@2x.png" width="152" height="152" gap:platform="ios"/>
+    <icon src="icon-76.png" width="76" height="76" gap:platform="ios"/>
+    <icon src="icon-76@2x.png" width="152" height="152" gap:platform="ios"/>
+    <icon src="icon-120.png" width="120" height="120" gap:platform="ios"/>
+    <icon src="icon-152.png" width="152" height="152" gap:platform="ios"/>
+
 
    <icon src="res/icon/cordova_512.png"/>
 
