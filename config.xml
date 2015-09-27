@@ -62,6 +62,14 @@
 
     <icon src="res/icon/cordova_ios_144.png" gap:platform="ios" width="144" height="144"/>
 
+
+
+    <gap:splash src="res/screen/iphone_retina_portrait.png" gap:platform="ios" width="640" height="960"/>
+
+      <!-- iPhone 5 / iPod Touch (5th Generation) -->
+    <gap:splash src="Default-568h@2x.png" gap:platform="ios" width="640" height="1136" />
+
+    
      <gap:splash src="res/screen/Default-667h@2x.png" gap:platform="ios" width="750" height="1334" />
      <gap:splash src="res/screen/Default-Portrait-736h@3x.png" gap:platform="ios" width="1242" height="2208" />
 
