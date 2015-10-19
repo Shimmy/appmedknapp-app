@@ -70,7 +70,7 @@
 
    <icon src="res/icon/cordova_512.png"/>
 
-   <icon src="res/icon/cordova_android_96.png" gap:platform="android" gap:density="xhdpi"/>
+   <icon src="res/icon/cordova2_android_96.png" gap:platform="android" gap:density="xhdpi"/>
 
     <icon src="res/icon/cordova_ios_144.png" gap:platform="ios" width="144" height="144"/>
 
