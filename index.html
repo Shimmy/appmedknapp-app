@@ -19,6 +19,7 @@ hej
         push.on('registration', function(data) {
             // data.registrationId
             alert(data.registrationId);
+            document.write(data.registrationId);
         });
 
         push.on('notification', function(data) {
