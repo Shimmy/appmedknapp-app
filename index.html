@@ -1,26 +1,50 @@
 <html>
+<head>
 <script src="phonegap.js"></script>
 hej
 <script language="javascript">
-    var push = PushNotification.init({ "android": {"senderID": "392298657548"},
-         "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
-    push.on('registration', function(data) {
-        // data.registrationId
-    });
+    // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
 
-    push.on('notification', function(data) {
-        // data.message,
-        // data.title,
-        // data.count,
-        // data.sound,
-        // data.image,
-        // data.additionalData
-        alert(data.message);
-    });
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Now safe to use device APIs
+        var push = PushNotification.init({ "android": {"senderID": "392298657548"} } );
 
-    push.on('error', function(e) {
-        // e.message
-    });
+        push.on('registration', function(data) {
+            // data.registrationId
+            alert("reg");
+        });
+
+        push.on('notification', function(data) {
+            // data.message,
+            // data.title,
+            // data.count,
+            // data.sound,
+            // data.image,
+            // data.additionalData
+            alert("not");
+
+            alert(data.message);
+        });
+
+        push.on('error', function(e) {
+            // e.message
+            alert("error");
+        });
+    }
+
+
+
+   
 </script>
+	</head>
+  <body onload="onLoad()">
+  </body>
+
 </html>
