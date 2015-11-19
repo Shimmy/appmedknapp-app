@@ -4,15 +4,15 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.shoogle.ha"
-        version   = "1.0.3">
+        version   = "1.0.4">
 
-    <name>HaningeAnchors Team 05</name>
+    <name>Haninge Anchors</name>
 
     <description>
         App för anmälan till träningar
     </description>
 
-    <author href="http://www.haningeanchors.se" email="conny@shoogle.se">
+    <author href="http://hahc.se" email="conny@shoogle.se">
         Conny
     </author>
 
