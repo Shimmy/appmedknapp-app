@@ -43,7 +43,7 @@
         <preference name="phonegap-version"       value="3.5.0" />
     -->
     <preference name="phonegap-version" value="cli-5.2.0" />
-    <gap:plugin name="cordova-plugin-push" source="npm" />
+    <gap:plugin name="phonegap-plugin-push" source="npm" />
 
     <!-- Plugins -->
 
