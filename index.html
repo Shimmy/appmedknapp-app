@@ -20,20 +20,20 @@ hej
             // data.registrationId
             alert(data.registrationId);
             //document.write(data.registrationId);
-          // window.location.href="http://team05.hahc.se"
+           window.location.href="http://team05.hahc.se"
         });
 
-        push.on('notification', function(data) {
+      //  push.on('notification', function(data) {
             // data.message,
             // data.title,
             // data.count,
             // data.sound,
             // data.image,
             // data.additionalData
-            alert("not");
+        //    alert("not");
 
-            alert(data.message);
-        });
+          //  alert(data.message);
+        //});
 
         push.on('error', function(e) {
             // e.message
@@ -47,7 +47,7 @@ hej
 </script>
 	</head>
   <body onload="onLoad()">
-  <iframe src="http://team05.hahc.se" style="width:100%; height:100%"></iframe>
+  
   </body>
 
 </html>
