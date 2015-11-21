@@ -15,7 +15,7 @@
     function onDeviceReady() {
         // Now safe to use device APIs
     var push = PushNotification.init({ "android": {"senderID": "392298657548", "sound": "true", "forceShow": "true"}, 
-        "ios": {"alert": "true", "badge": "true", "sound": "true"} } );
+        "ios": {"alert": "true", "sound": "true"} } );
 
 
         push.on('registration', function(data) {
