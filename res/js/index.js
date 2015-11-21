@@ -15,23 +15,38 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        var push = PushNotification.init({
-            "android": {
-                "senderID": "392298657548"
-            },
-            "ios": {"alert": "true", "badge": "true", "sound": "true"}, 
-            "windows": {} 
-        });
-        
+        regid = localStorage.getItem("regid")
+        if (regid) {
+           // alert("has regid " + regid);          
+        } else {
+            
+        }
+        var push = PushNotification.init({ "android": {"senderID": "392298657548", "sound": "true", "forceShow": "true"} } );
+
         push.on('registration', function(data) {
+            // data.registrationId
+            //alert(data.registrationId);
             alert(data.registrationId);
+            if (!localStorage.getItem("regid")) {
+            var regidd = data.registrationId;
+            $.getJSON( "/push", { regid: data.registrationId }, function(data) {
+                if (data.status == "created") {
+                    localStorage.setItem("regid", regidd);
+                    window.location.href="http://team05.hahc.se/"
+                }
+            } );
+        } else {
             window.location.href="http://team05.hahc.se/"
+            //document.write(data.registrationId);
+        }
         });
 
-        push.on('notification', function(data) {
-        	alert(data.message);
+        push.on('notification', function(data) {            
+            alert(data.message);
         });
 
+        
+        
         push.on('error', function(e) {
         });
     }
