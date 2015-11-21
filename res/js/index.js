@@ -32,7 +32,7 @@ var app = {
             $.getJSON( "http://team05.hahc.se/push", { regid: data.registrationId }, function(data) {
                 if (data.status == "created") {
                     localStorage.setItem("regid", regidd);
-                    window.location.href="http://team05.hahc.se/"
+                    window.location.href="http://team05.hahc.se/?regid=".regidd
                 } else {                    
                     window.location.href="http://team05.hahc.se/"
                 }
