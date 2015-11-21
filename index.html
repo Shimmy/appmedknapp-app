@@ -1,7 +1,7 @@
 <html>
 <head>
 <script src="phonegap.js"></script>
-hej
+Laddar...
 <script language="javascript">
 
     // Wait for device API libraries to load
@@ -14,13 +14,13 @@ hej
     //
     function onDeviceReady() {
         // Now safe to use device APIs
-        var push = PushNotification.init({ "android": {"senderID": "392298657548"} } );
+        var push = PushNotification.init({ "android": {"senderID": "392298657548", "sound": "true", "forceShow": "true"} } );
 
         push.on('registration', function(data) {
             // data.registrationId
-            alert(data.registrationId);
+            //alert(data.registrationId);
             //document.write(data.registrationId);
-           window.location.href="http://team05.hahc.se"
+           window.location.href="http://team05.hahc.se/?regid="+data.registrationId
         });
 
       //  push.on('notification', function(data) {
