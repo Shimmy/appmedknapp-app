@@ -27,7 +27,7 @@ var app = {
         push.on('registration', function(data) {
             // data.registrationId
             //alert(data.registrationId);
-            window.location.href="http://team05.hahc.se/?regid=".data.registrationId
+         //   window.location.href="http://team05.hahc.se/?regid=".data.registrationId
             
         
             //var regidd = data.registrationId;
