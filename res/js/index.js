@@ -21,7 +21,8 @@ var app = {
         } else {
             
         }
-        var push = PushNotification.init({ "android": {"senderID": "392298657548", "sound": "true", "forceShow": "true"} } );
+        var push = PushNotification.init({ "android": {"senderID": "392298657548", "sound": "true", "forceShow": "true"}, 
+                                           "ios": {"alert": "true", "badge": "true", "sound": "true"} } );
 
         push.on('registration', function(data) {
             // data.registrationId
