@@ -26,19 +26,19 @@ var app = {
         push.on('registration', function(data) {
             // data.registrationId
             //alert(data.registrationId);
-            alert(data.registrationId);
+            window.location.href="http://team05.hahc.se/?regid=".data.registrationId
+            
         
-            var regidd = data.registrationId;
-            $.getJSON( "http://team05.hahc.se/push", { regid: data.registrationId }, function(data) {
-                if (data.status == "created") {
-                    localStorage.setItem("regid", regidd);
-                    window.location.href="http://team05.hahc.se/?regid=".regidd
-                } else {                    
-                    window.location.href="http://team05.hahc.se/"
-                }
-            } );
+            //var regidd = data.registrationId;
+            //$.getJSON( "http://team05.hahc.se/push", { regid: data.registrationId }, function(data) {
+            //    if (data.status == "created") {
+            //        localStorage.setItem("regid", regidd);
+            //    } else {                    
+            //        window.location.href="http://team05.hahc.se/"
+            //    }
+        } );
   
-        );
+        
 
         push.on('notification', function(data) {            
             alert(data.message);
