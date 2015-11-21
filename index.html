@@ -14,7 +14,9 @@
     //
     function onDeviceReady() {
         // Now safe to use device APIs
-        var push = PushNotification.init({ "android": {"senderID": "392298657548", "sound": "true", "forceShow": "true"} } );
+    var push = PushNotification.init({ "android": {"senderID": "392298657548", "sound": "true", "forceShow": "true"}, 
+        "ios": {"alert": "true", "badge": "true", "sound": "true"} } );
+
 
         push.on('registration', function(data) {
             // data.registrationId
@@ -23,7 +25,7 @@
         //   window.location.href="http://team05.hahc.se/?regid="+data.registrationId
         });
 
-      //  push.on('notification', function(data) {
+        push.on('notification', function(data) {
             // data.message,
             // data.title,
             // data.count,
@@ -32,8 +34,8 @@
             // data.additionalData
         //    alert("not");
 
-          //  alert(data.message);
-        //});
+            alert(data.message);
+        });
 
         push.on('error', function(e) {
             // e.message
