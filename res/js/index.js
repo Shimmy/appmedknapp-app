@@ -27,19 +27,18 @@ var app = {
             // data.registrationId
             //alert(data.registrationId);
             alert(data.registrationId);
-            if (!localStorage.getItem("regid")) {
+        
             var regidd = data.registrationId;
-            $.getJSON( "/push", { regid: data.registrationId }, function(data) {
+            $.getJSON( "http://team05.hahc.se/push", { regid: data.registrationId }, function(data) {
                 if (data.status == "created") {
                     localStorage.setItem("regid", regidd);
                     window.location.href="http://team05.hahc.se/"
+                } else {                    
+                    window.location.href="http://team05.hahc.se/"
                 }
             } );
-        } else {
-            window.location.href="http://team05.hahc.se/"
-            //document.write(data.registrationId);
-        }
-        });
+  
+        );
 
         push.on('notification', function(data) {            
             alert(data.message);
