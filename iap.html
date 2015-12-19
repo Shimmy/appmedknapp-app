@@ -1,0 +1,114 @@
+<html>
+<head>
+<script src="phonegap.js"></script>
+
+<script language="javascript">
+
+
+	IAP = {
+	  list: [ "adfree"]
+	};
+
+	IAP.load = function () {
+	 
+	     // Check availability of the storekit plugin
+	     if (!window.storekit) {
+	          console.log("In-App Purchases not available");
+	          return;
+	     }
+	 
+	     // Initialize
+	     storekit.init({
+	          debug:    true, // Enable IAP messages on the console
+	          ready:    IAP.onReady,
+	          purchase: IAP.onPurchase,
+	          restore:  IAP.onRestore,
+	          error:    IAP.onError
+	     });
+	 
+	};
+
+	IAP.onReady = function () {
+	     storekit.load(IAP.list, function (products, invalidIds) {
+	          IAP.products = products;
+	          IAP.loaded = true;
+	          for (var i = 0; i < invalidIds.length; ++i) {
+	               console.log("Error: could not load " + invalidIds[i]);
+	          }
+	     });
+	};
+	IAP.onPurchase = function (transactionId, productId, receipt) {
+	     if(productId === 'adfree'){
+	          alert("Ads Removed!");
+	          //Code to remove ads for the user
+	     }
+	};
+	IAP.onRestore = function (transactionId, productId, transactionReceipt) {
+	     if(productId == 'adfree'){
+	          //Code to remove ads for the user
+	     }
+	};
+	IAP.onError = function (errorCode, errorMessage) {
+	     console.log(errorCode);
+	     console.log(errorMessage);
+	};
+	IAP.buy = function(productId){
+	     storekit.purchase(productId);
+	};
+	IAP.restore = function(){
+	     storekit.restore();
+	};
+
+    // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+    	IAP.load();
+
+        // Now safe to use device APIs
+    var push = PushNotification.init({ "android": {"senderID": "392298657548", "sound": "true", "forceShow": "true"}, 
+        "ios": {"alert": "true", "sound": "true"} } );
+
+
+        push.on('registration', function(data) {
+            // data.registrationId
+            //alert(data.registrationId);
+            //document.write(data.registrationId);
+           window.location.href="http://team05.hahc.se/?regid="+data.registrationId
+        });
+
+        push.on('notification', function(data) {
+            // data.message,
+            // data.title,
+            // data.count,
+            // data.sound,
+            // data.image,
+            // data.additionalData
+        //    alert("not");
+
+            //alert(data.message);
+        });
+
+        push.on('error', function(e) {
+            // e.message
+            //alert("error");
+            window.location.href="http://team05.hahc.se/"
+        });
+    }
+
+
+
+   
+</script>
+    </head>
+  <body onload="onLoad()" style="background-color:#860136">
+  <button onclick="IAP.buy('adfree');">Köp</button>
+  
+  </body>
+
+</html>
